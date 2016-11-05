@@ -17,6 +17,13 @@ export class Scanner {
     }
     
         
+	doPromptOneNum() {
+		let whoMoveFirst = prompt(
+			"Who's gonna move first? (1)Computer (2)User: ");
+
+		return whoMoveFirst;
+	}
+
     
     doPrompt() {
         

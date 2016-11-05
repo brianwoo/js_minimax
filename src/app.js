@@ -3,6 +3,7 @@
 import {Point} from "./classes/Point.js";
 import {PointsAndScores} from "./classes/PointsAndScores.js";
 import {Scanner} from "./classes/Scanner.js";
+import {TicTacToe} from "./classes/TicTacToe.js";
 
 class Test {
     
@@ -23,9 +24,15 @@ class Test {
     
 }
 
+//let a = new Array();
+//console.log("a=" + a.length);
 
-let test = new Test();
-test.testPoint();
+let ticTacToe = new TicTacToe();
+ticTacToe.main();
+
+
+//let test = new Test();
+//test.testPoint();
 
 //let scanner = new Scanner();
 //let pt = scanner.doPrompt();

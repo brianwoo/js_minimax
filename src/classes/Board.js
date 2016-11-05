@@ -1,5 +1,5 @@
 import {Point} from "./Point.js";
-import {PointAndScores} from "./PointAndScores.js";
+import {PointsAndScores} from "./PointsAndScores.js";
 import {Scanner} from "./Scanner.js";
 
 export class Board {
@@ -21,6 +21,10 @@ export class Board {
     }
     
     isGameOver() {
+
+		//console.log("here");
+		//console.log("getAvailableStates=" + getAvailableStates().length);
+
         //Game is over is someone has won, or board is full (draw)
         return (this.hasXWon() || 
                 this.hasOWon() || 
@@ -58,11 +62,11 @@ export class Board {
     }
     
     hasXWon() {
-        hasPlayerWon(1); // Player1 == X
+        this.hasPlayerWon(1); // Player1 == X
     }
     
     hasOWon() {
-        hasPlayerWon(2); // Player2 == O
+        this.hasPlayerWon(2); // Player2 == O
     }
     
     
@@ -75,6 +79,7 @@ export class Board {
                 }
             }
         }
+		return this.availablePoints;
     }
     
     
@@ -110,9 +115,14 @@ export class Board {
         console.log("============");
         
         for (let i=0; i < 3; i++) {
+
+			let row = "";
+
             for (let j=0; j < 3; j++) {
-                process.stdout.write(this.board[i][j] + " ");
+                row += this.board[i][j] + " ";
             }
+
+			console.log(row);
             console.log(" ");
         }
     }
