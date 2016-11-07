@@ -53,7 +53,7 @@ export class Board {
                 ||
                 (this.board[0][i] == this.board[1][i] && 
                  this.board[0][i] == this.board[2][i] && 
-                 this.board[0][i] == 1)) {
+                 this.board[0][i] == player)) {
                 
                 // X Row or Column win
                 return true;
@@ -71,6 +71,8 @@ export class Board {
     
     
     getAvailableStates() {
+        
+        this.availablePoints = new Array();
         
         for (let i=0; i<3; i++) {
             for (let j=0; j<3; j++) {
@@ -155,6 +157,7 @@ export class Board {
     
     
     callMinimax(depth, turn) {
+        this.rootsChildrenScores = new Array();
         this.minimax(depth, turn);
     }
     
