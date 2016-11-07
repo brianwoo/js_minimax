@@ -62,11 +62,11 @@ export class Board {
     }
     
     hasXWon() {
-        this.hasPlayerWon(1); // Player1 == X
+        return this.hasPlayerWon(1); // Player1 == X
     }
     
     hasOWon() {
-        this.hasPlayerWon(2); // Player2 == O
+        return this.hasPlayerWon(2); // Player2 == O
     }
     
     
